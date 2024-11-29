@@ -5,25 +5,28 @@ import Titulo from "@/components/Titulo";
 import { CarrinhoContext } from "@/context/CarrinhoContext";
 
 const Produtos = () => {
-  const {carrinho, setCarrinho} = useContext(CarrinhoContext);
+  const { carrinho, setCarrinho } = useContext(CarrinhoContext);
 
   function adicionarProduto(novoProduto) {
-    const temOProduto = carrinho.some((itemDoCarrinho) => { itemDoCarrinho.id === novoProduto.id});
+    const temOProduto = carrinho.some((itemDoCarrinho) => {
+      itemDoCarrinho.id === novoProduto.id;
+    });
 
     if (!temOProduto) {
       novoProduto.quantidade = 1;
       return setCarrinho((carrinhoAnterior) => [
         ...carrinhoAnterior,
-        novoProduto
+        novoProduto,
       ]);
     }
 
-    setCarrinho((carrinhoAnterior) => 
+    setCarrinho((carrinhoAnterior) =>
       carrinhoAnterior.map((itemDoCarrinho) => {
-        if (itemDoCarrinho.id === novoProduto.id) itemDoCarrinho.quantidade += 1;
+        if (itemDoCarrinho.id === novoProduto.id)
+          itemDoCarrinho.quantidade += 1;
         return itemDoCarrinho;
       })
-    )
+    );
   }
 
   return (
