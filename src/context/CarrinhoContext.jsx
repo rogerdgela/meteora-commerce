@@ -5,9 +5,14 @@ CarrinhoContext.displayName = "Carrinho";
 
 export const CarrinhoProvider = ({ children }) => {
   const [carrinho, setCarrinho] = useState([]);
+  const [quantidade, setQuantidade] = useState(0);
+  const [total, setTotal] = useState(0);
 
   return (
-    <CarrinhoContext.Provider value={{ carrinho, setCarrinho }}>
+    <CarrinhoContext.Provider value={{ 
+      carrinho, setCarrinho, 
+      quantidade, setQuantidade, 
+      total, setTotal }}>
       {children}
     </CarrinhoContext.Provider>
   );
