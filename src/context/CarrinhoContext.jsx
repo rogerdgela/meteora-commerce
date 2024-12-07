@@ -9,14 +9,15 @@ export const CarrinhoProvider = ({ children }) => {
   const [valorTotal, setValorTotal] = useState(0);
 
   return (
-    <CarrinhoContext.Provider value={{ 
-      carrinho, 
-      setCarrinho, 
-      quantidade, 
-      setQuantidade, 
-      valorTotal, 
-      setValorTotal 
-    }}
+    <CarrinhoContext.Provider
+      value={{
+        carrinho,
+        setCarrinho,
+        quantidade,
+        setQuantidade,
+        valorTotal,
+        setValorTotal,
+      }}
     >
       {children}
     </CarrinhoContext.Provider>
